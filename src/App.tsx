@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { ChatClient } from './chat-client';
 
-const URL = 'ENTER_YOUR_WEBSOCKET_URL_HERE';
+const URL = 'wss://j8g66aeq71.execute-api.us-east-1.amazonaws.com/production';
 
 const App = () => {
 
@@ -53,7 +53,7 @@ const App = () => {
   }, []);
 
   const onSendPrivateMessage = useCallback((to: string) => {
-    const message = prompt('Enter private message for ' + to);
+    const message = prompt('Mensagem privada para: ' + to);
     socket.current?.send(JSON.stringify({
       action: 'sendPrivate',
       message,
@@ -62,7 +62,7 @@ const App = () => {
   }, []);
 
   const onSendPublicMessage = useCallback(() => {
-    const message = prompt('Enter public message');
+    const message = prompt('Mensagem pública');
     socket.current?.send(JSON.stringify({
       action: 'sendPublic',
       message,

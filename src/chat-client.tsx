@@ -24,14 +24,14 @@ export const ChatClient = (props: Props) => {
       position: 'absolute',
       width: '100%',
       height: '100%',
-      backgroundColor: '#f4ede3',
+      backgroundColor: 'white',
       display: 'flex',
       alignItems: 'center',
     }}>
       <CssBaseline />
       <Container maxWidth="lg" style={{ height: '90%' }}>
         <Grid container style={{ height: '100%' }}>
-          <Grid item xs={2} style={{ backgroundColor: '#3e103f', color: 'white' }}>
+          <Grid item xs={2} style={{ backgroundColor: 'cadetblue', color: 'white' }}>
             <List component="nav">
               {props.members.map(item =>
                 <ListItem key={item} onClick={() => { props.onPrivateMessage(item); }} button>
